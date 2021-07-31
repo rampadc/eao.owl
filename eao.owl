@@ -1,0 +1,1019 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://eao.onl/ontologies/eao.owl#"
+     xml:base="http://eao.onl/ontologies/eao.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:CommonCoreOntologies="http://www.ontologyrepository.com/CommonCoreOntologies/">
+    <owl:Ontology rdf:about="http://eao.onl/ontologies/eao.owl">
+        <owl:versionIRI rdf:resource="http://eao.onl/ontologies/eao.owl/0.1"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl"/>
+        <owl:imports rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Mid/2021-03-01/EventOntology"/>
+        <owl:imports rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Mid/2021-03-01/ExtendedRelationOntology"/>
+        <rdfs:comment xml:lang="en">This ontology is designed to represent an enterprise archtiecture, inspired by the Archimate framework.</rdfs:comment>
+        <rdfs:label xml:lang="en">Enterprise Architecture Ontology</rdfs:label>
+        <owl:versionInfo xml:lang="en">Version 0.1</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#accesses -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#accesses">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://eao.onl/ontologies/eao.owl#isAccessedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#aggregates -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#aggregates">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#flowsFrom -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#flowsFrom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://eao.onl/ontologies/eao.owl#flowsTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#flowsTo -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#flowsTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#hasArchitecture -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#hasArchitecture">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label>has architecture</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#hasConventionColor -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#hasConventionColor">
+        <rdfs:label>has convention color</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#hasConventionShape -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#hasConventionShape">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label>has convention shape</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#hasGeneralization -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#hasGeneralization">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://eao.onl/ontologies/eao.owl#hasSpecialization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#hasSpecialization -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#hasSpecialization"/>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#isAccessedBy -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#isAccessedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#isAssignedTo -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#isAssignedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#isComposedOf -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#isComposedOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#isRealizedBy -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#isRealizedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#isServedBy -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#isServedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://eao.onl/ontologies/eao.owl#serves"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#isTriggeredBy -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#isTriggeredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://eao.onl/ontologies/eao.owl#triggers"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#serves -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#serves">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#triggers -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#triggers">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000055 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000055">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#abstract -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#abstract">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#aspect"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasConventionColor"/>
+                <owl:allValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#white"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">non-instantiable, used only in the metamodel</rdfs:comment>
+        <rdfs:label xml:lang="en">abstract</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#active_structure_aspect -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#active_structure_aspect">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#aspect"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasConventionColor"/>
+                <owl:allValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#dark_grey"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap03.html</CommonCoreOntologies:http_query_string>
+        <rdfs:comment xml:lang="en">represents the structural elements (the business actors, application components, and devices that display actual behavior; i.e., the “subjects” of activity)</rdfs:comment>
+        <rdfs:label xml:lang="en">active structure aspect</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#active_structure_element -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#active_structure_element">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#structure_element"/>
+        <owl:disjointWith rdf:resource="http://eao.onl/ontologies/eao.owl#passive_structure_element"/>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <rdfs:label xml:lang="en">active structure element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#application_layer -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#application_layer">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#layer"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasConventionColor"/>
+                <owl:allValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#blue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap03.html</CommonCoreOntologies:http_query_string>
+        <rdfs:comment xml:lang="en">depicts application services that support the business, and the applications that realize them</rdfs:comment>
+        <rdfs:label xml:lang="en">application layer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#architecture -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#architecture">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001019"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#architecture_view"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001019"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001019"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#layer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">The fundamental concepts or properties of a system in its environment embodied in its elements, relationships, and in pricinples of its design and evolution.
+
+[Source: ISO/IEC/IEEE 42010:2011]
+
+The structure of components, their inter-relationships, and the principles and guidelines governing their designs and evolution over time.
+
+[Source: TOGAF 9 addition]</rdfs:comment>
+        <rdfs:label xml:lang="en">architecture</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#architecture_view -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#architecture_view">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</CommonCoreOntologies:http_query_string>
+        <rdfs:comment xml:lang="en">A representation of a system from the perspective of a related set of concerns.
+
+[Source: Archimate 3.1]</rdfs:comment>
+        <rdfs:label xml:lang="en">architecture view</rdfs:label>
+        <rdfs:label xml:lang="en">view</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#architecture_viewpoint -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#architecture_viewpoint">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</CommonCoreOntologies:http_query_string>
+        <rdfs:comment>A specification of the conventions for a particular kind of architecture view.
+
+[Source: Archimate 3.1]</rdfs:comment>
+        <rdfs:label xml:lang="en">architecture viewpoint</rdfs:label>
+        <rdfs:label xml:lang="en">viewpoint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#aspect -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#aspect">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasConventionColor"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#aspect_color"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</CommonCoreOntologies:http_query_string>
+        <rdfs:comment xml:lang="en">Classification of elements based on layer-independent characteristics related to the concerns of different stakeholders. Used for positioning elements in the ArchiMate metamodel.</rdfs:comment>
+        <rdfs:label xml:lang="en">aspect</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#aspect_color -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#aspect_color">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#color"/>
+        <owl:disjointWith rdf:resource="http://eao.onl/ontologies/eao.owl#layer_color"/>
+        <rdfs:comment xml:lang="en">shades of grey are used to distinguish elements belonging to the different aspects of the ArchiMate framework</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#behavior_aspect -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#behavior_aspect">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#aspect"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasConventionColor"/>
+                <owl:allValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#medium_grey"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap03.html</CommonCoreOntologies:http_query_string>
+        <rdfs:comment xml:lang="en">represents the behavior (processes, functions, events, and services) performed by the actors; structural elements are assigned to behavioral elements, to show who or what displays the behavior</rdfs:comment>
+        <rdfs:label xml:lang="en">behavior aspect</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#behavior_element -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#behavior_element">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#element"/>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <rdfs:label xml:lang="en">behavior element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#blue -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#blue">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#layer_color"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#business_layer -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#business_layer">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#layer"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasConventionColor"/>
+                <owl:allValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#yellow"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap03.html</CommonCoreOntologies:http_query_string>
+        <rdfs:comment xml:lang="en">depicts business services offered to customers, which are realized in the organization by business processes performed by business actors</rdfs:comment>
+        <rdfs:label xml:lang="en">business layer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#color -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#color">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:comment xml:lang="en">convention colors, used to distinguish between the layers and aspects of the Archimate Core Framework</rdfs:comment>
+        <rdfs:label xml:lang="en">color</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#composite_element -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#composite_element">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#element"/>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</CommonCoreOntologies:http_query_string>
+        <rdfs:comment xml:lang="en">an element consisting of other elements from multiple aspects or layers of the language</rdfs:comment>
+        <rdfs:label xml:lang="en">composite element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#corner_shape -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#corner_shape">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#accesses"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#passive_structure_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#aggregates"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#flowsTo"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#flowsTo"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#isComposedOf"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#triggers"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#triggers"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#dark_green -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#dark_green">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#layer_color"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#dark_grey -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#dark_grey">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#aspect_color"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#diagonal_corners -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#diagonal_corners">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#corner_shape"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#element -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#element">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasConventionShape"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#corner_shape"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</CommonCoreOntologies:http_query_string>
+        <rdfs:comment xml:lang="en">Basic unit, used to define and describe the constituent parts of Enterprise Architectures and their unique set of characteristics</rdfs:comment>
+        <rdfs:label xml:lang="en">element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#enterprise -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#enterprise">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasArchitecture"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#enterprise_architecture"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112 xml:lang="en">a chain of geographically distant organisations linked together by common ownership</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">a division of a corporation</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">a government agency</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">a single government department</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">a whole corporation</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">groups of countries or governments working together to create common or shareable deliverables or infrastructure</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">partnerships and alliances of businesses working together</obo:IAO_0000112>
+        <rdfs:comment xml:lang="en">An enterprise is any collection of organisations that has common goals
+
+[Source: TOGAF 9]</rdfs:comment>
+        <rdfs:label xml:lang="en">enterprise</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#enterprise_architecture -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#enterprise_architecture">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#architecture"/>
+        <rdfs:comment xml:lang="en">The organising logic for business processes and IT infrastructure reflecting the integration and standardising requirements of the firm&apos;s operating model.
+
+[Source: MIT Center for Information Systems Research]</rdfs:comment>
+        <rdfs:label xml:lang="en">enterprise architecture</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#event -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#event">
+        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#behavior_element"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#accesses"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#passive_structure_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#aggregates"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#flowsTo"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#flowsTo"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#external_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#flowsTo"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasSpecialization"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#isComposedOf"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#triggers"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#triggers"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#external_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#triggers"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <rdfs:label xml:lang="en">event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#external_active_structure_element -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#external_active_structure_element">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#active_structure_element"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#aggregates"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#external_active_structure_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasSpecialization"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#external_active_structure_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#isAssignedTo"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#external_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#isComposedOf"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#external_active_structure_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#serves"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_active_structure_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://eao.onl/ontologies/eao.owl#internal_active_structure_element"/>
+        <CommonCoreOntologies:alternative_label xml:lang="en">interface</CommonCoreOntologies:alternative_label>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <rdfs:label xml:lang="en">external active structure element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#external_behavior_element -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#external_behavior_element">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#behavior_element"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#accesses"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#passive_structure_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#aggregates"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#external_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#flowsTo"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#flowsTo"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#external_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasSpecialization"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#external_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#isComposedOf"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#external_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#serves"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_active_structure_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#serves"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#triggers"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#triggers"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#external_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <CommonCoreOntologies:alternative_label xml:lang="en">service</CommonCoreOntologies:alternative_label>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <rdfs:label xml:lang="en">external behavior element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#green -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#green">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#layer_color"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#internal_active_structure_element -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#internal_active_structure_element">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#active_structure_element"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#aggregates"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_active_structure_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasSpecialization"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_active_structure_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#isAssignedTo"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#isComposedOf"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#external_active_structure_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#isComposedOf"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_active_structure_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <rdfs:label xml:lang="en">internal active structure element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#internal_behavior_element -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#internal_behavior_element">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#behavior_element"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#aggregates"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#flowsTo"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#flowsTo"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasSpecialization"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#isComposedOf"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#triggers"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#triggers"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <rdfs:label xml:lang="en">internal behavior element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#layer -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#layer">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasConventionColor"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#layer_color"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</CommonCoreOntologies:http_query_string>
+        <rdfs:comment xml:lang="en">An abstraction of the Archimate framework at which an enterprise can be modeled.
+
+[Source: Archimate 3.1]</rdfs:comment>
+        <rdfs:label>layer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#layer_color -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#layer_color">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#color"/>
+        <rdfs:comment xml:lang="en">layer colors are used to distinguish between the layers of the ArchiMate Core Framework</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#light_grey -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#light_grey">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#aspect_color"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#medium_grey -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#medium_grey">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#aspect_color"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#motivation_element -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#motivation_element">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#element"/>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <rdfs:label xml:lang="en">motivation element</rdfs:label>
+        <rdfs:label xml:lang="en">motivation layer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#passive_structure_aspect -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#passive_structure_aspect">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#aspect"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasConventionColor"/>
+                <owl:allValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#light_grey"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap03.html</CommonCoreOntologies:http_query_string>
+        <rdfs:comment xml:lang="en">represents the objects on which behavior is performed; these are usually information objects in the Business Layer and data objects in the Application Layer, but they may also be used to represent physical objects</rdfs:comment>
+        <rdfs:label xml:lang="en">passive structure aspect</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#passive_structure_element -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#passive_structure_element">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#structure_element"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#aggregates"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#passive_structure_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasSpecialization"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#passive_structure_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#isComposedOf"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#passive_structure_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <rdfs:label xml:lang="en">passive structure element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#round_corners -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#round_corners">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#corner_shape"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#square_corners -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#square_corners">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#corner_shape"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#structure_element -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#structure_element">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#element"/>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <rdfs:label xml:lang="en">structure element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#technology_layer -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#technology_layer">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#layer"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasConventionColor"/>
+                <owl:allValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#green"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap03.html</CommonCoreOntologies:http_query_string>
+        <rdfs:comment xml:lang="en">depicts technology services such as processing, storage, and communication services needed to run the applications, and the computer and communication hardware and system software that realize those services. Physical elements are included for modeling physical equipment, materials, and distribution networks to this layer</rdfs:comment>
+        <rdfs:label xml:lang="en">technology layer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#white -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#white">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#aspect_color"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#yellow -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#yellow">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#layer_color"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://eao.onl/ontologies/eao.owl#event"/>
+            <rdf:Description rdf:about="http://eao.onl/ontologies/eao.owl#external_behavior_element"/>
+            <rdf:Description rdf:about="http://eao.onl/ontologies/eao.owl#internal_behavior_element"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
