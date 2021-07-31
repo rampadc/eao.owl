@@ -18,6 +18,7 @@
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl"/>
         <owl:imports rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Mid/2021-03-01/EventOntology"/>
         <owl:imports rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Mid/2021-03-01/ExtendedRelationOntology"/>
+        <owl:imports rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Upper/2021-03-01/ROImport"/>
         <rdfs:comment xml:lang="en">This ontology is designed to represent an enterprise archtiecture, inspired by the Archimate framework.</rdfs:comment>
         <rdfs:label xml:lang="en">Enterprise Architecture Ontology</rdfs:label>
         <owl:versionInfo xml:lang="en">Version 0.1</owl:versionInfo>
@@ -277,6 +278,17 @@ The influence relationship is used to describe that some architectural element i
     
 
 
+    <!-- http://eao.onl/ontologies/eao.owl#realizes -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#realizes">
+        <archimate_relationship xml:lang="en">realization</archimate_relationship>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap05.html#_Toc10045315</dc:source>
+        <rdfs:comment xml:lang="en">Represents that an entity plays a critical role in the creation, achievement, sustenance, or operation of a more abstract entity. The interpretation of a realization relationship is that the whole or part of the source element realizes the whole of the target element. This means that if, for example, two internal behavior elements have a realization relationship to the same service, either of them can realize the complete service. If both internal behavior elements are needed to realize, the grouping element or an and junction can be used. For weaker types of positive, neutral, or negative contribution to the realization of a motivation element, the influence relationship should be used.</rdfs:comment>
+        <rdfs:label xml:lang="en">realizes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://eao.onl/ontologies/eao.owl#serves -->
 
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#serves">
@@ -309,16 +321,6 @@ The influence relationship is used to describe that some architectural element i
         <CommonCoreOntologies:alternative_label xml:lang="en">write</CommonCoreOntologies:alternative_label>
         <rdfs:label xml:lang="en">update</rdfs:label>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000055 -->
-
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000055">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <archimate_relationship xml:lang="en">realization</archimate_relationship>
-        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap05.html</dc:source>
-    </rdf:Description>
     
 
 
@@ -1055,6 +1057,12 @@ The structure of components, their inter-relationships, and the principles and g
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#realizes"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#external_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#triggers"/>
                 <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#event"/>
             </owl:Restriction>
@@ -1063,12 +1071,6 @@ The structure of components, their inter-relationships, and the principles and g
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#triggers"/>
                 <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_behavior_element"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
-                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#external_behavior_element"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</dc:source>
