@@ -47,7 +47,7 @@
     <!-- http://eao.onl/ontologies/eao.owl#aggregates -->
 
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#aggregates">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0001019"/>
     </owl:ObjectProperty>
     
 
@@ -100,13 +100,16 @@
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#hasGeneralization">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://eao.onl/ontologies/eao.owl#hasSpecialization"/>
+        <rdfs:label xml:lang="en">has generalization</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://eao.onl/ontologies/eao.owl#hasSpecialization -->
 
-    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#hasSpecialization"/>
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#hasSpecialization">
+        <rdfs:label xml:lang="en">has specialization</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -114,6 +117,7 @@
 
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#isAccessedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label xml:lang="en">is accessed by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -122,6 +126,7 @@
 
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#isAssignedTo">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label xml:lang="en">is assigned to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -129,7 +134,7 @@
     <!-- http://eao.onl/ontologies/eao.owl#isComposedOf -->
 
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#isComposedOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0001019"/>
     </owl:ObjectProperty>
     
 
@@ -137,7 +142,9 @@
     <!-- http://eao.onl/ontologies/eao.owl#isRealizedBy -->
 
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#isRealizedBy">
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label xml:lang="en">is realised by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -147,6 +154,7 @@
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#isServedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://eao.onl/ontologies/eao.owl#serves"/>
+        <rdfs:label xml:lang="en">is served by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -156,6 +164,7 @@
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#isTriggeredBy">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://eao.onl/ontologies/eao.owl#triggers"/>
+        <rdfs:label xml:lang="en">is triggered by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -173,6 +182,12 @@
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#triggers">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000054 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000054"/>
     
 
 
@@ -205,6 +220,7 @@
                 <owl:allValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#white"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap03.html</dc:source>
         <rdfs:comment xml:lang="en">non-instantiable, used only in the metamodel</rdfs:comment>
         <rdfs:label xml:lang="en">abstract</rdfs:label>
     </owl:Class>
@@ -221,7 +237,7 @@
                 <owl:allValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#dark_grey"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap03.html</CommonCoreOntologies:http_query_string>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap03.html</dc:source>
         <rdfs:comment xml:lang="en">represents the structural elements (the business actors, application components, and devices that display actual behavior; i.e., the “subjects” of activity)</rdfs:comment>
         <rdfs:label xml:lang="en">active structure aspect</rdfs:label>
     </owl:Class>
@@ -233,7 +249,8 @@
     <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#active_structure_element">
         <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#structure_element"/>
         <owl:disjointWith rdf:resource="http://eao.onl/ontologies/eao.owl#passive_structure_element"/>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</dc:source>
+        <rdfs:comment xml:lang="en">Active structure elements are the subjects that can perform behavior</rdfs:comment>
         <rdfs:label xml:lang="en">active structure element</rdfs:label>
     </owl:Class>
     
@@ -249,7 +266,7 @@
                 <owl:allValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#blue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap03.html</CommonCoreOntologies:http_query_string>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</dc:source>
         <rdfs:comment xml:lang="en">depicts application services that support the business, and the applications that realize them</rdfs:comment>
         <rdfs:label xml:lang="en">application layer</rdfs:label>
     </owl:Class>
@@ -294,7 +311,7 @@ The structure of components, their inter-relationships, and the principles and g
 
     <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#architecture_view">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</CommonCoreOntologies:http_query_string>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</dc:source>
         <rdfs:comment xml:lang="en">A representation of a system from the perspective of a related set of concerns.
 
 [Source: Archimate 3.1]</rdfs:comment>
@@ -308,12 +325,12 @@ The structure of components, their inter-relationships, and the principles and g
 
     <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#architecture_viewpoint">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</CommonCoreOntologies:http_query_string>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</dc:source>
+        <CommonCoreOntologies:alternative_label xml:lang="en">viewpoint</CommonCoreOntologies:alternative_label>
         <rdfs:comment>A specification of the conventions for a particular kind of architecture view.
 
 [Source: Archimate 3.1]</rdfs:comment>
         <rdfs:label xml:lang="en">architecture viewpoint</rdfs:label>
-        <rdfs:label xml:lang="en">viewpoint</rdfs:label>
     </owl:Class>
     
 
@@ -328,7 +345,7 @@ The structure of components, their inter-relationships, and the principles and g
                 <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#aspect_color"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</CommonCoreOntologies:http_query_string>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</dc:source>
         <rdfs:comment xml:lang="en">Classification of elements based on layer-independent characteristics related to the concerns of different stakeholders. Used for positioning elements in the ArchiMate metamodel.</rdfs:comment>
         <rdfs:label xml:lang="en">aspect</rdfs:label>
     </owl:Class>
@@ -355,7 +372,7 @@ The structure of components, their inter-relationships, and the principles and g
                 <owl:allValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#medium_grey"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap03.html</CommonCoreOntologies:http_query_string>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap03.html</dc:source>
         <rdfs:comment xml:lang="en">represents the behavior (processes, functions, events, and services) performed by the actors; structural elements are assigned to behavioral elements, to show who or what displays the behavior</rdfs:comment>
         <rdfs:label xml:lang="en">behavior aspect</rdfs:label>
     </owl:Class>
@@ -366,7 +383,7 @@ The structure of components, their inter-relationships, and the principles and g
 
     <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#behavior_element">
         <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#element"/>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</dc:source>
         <rdfs:label xml:lang="en">behavior element</rdfs:label>
     </owl:Class>
     
@@ -390,9 +407,27 @@ The structure of components, their inter-relationships, and the principles and g
                 <owl:allValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#yellow"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap03.html</CommonCoreOntologies:http_query_string>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</dc:source>
         <rdfs:comment xml:lang="en">depicts business services offered to customers, which are realized in the organization by business processes performed by business actors</rdfs:comment>
         <rdfs:label xml:lang="en">business layer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#collaboration -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#collaboration">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#internal_active_structure_element"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#aggregates"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://eao.onl/ontologies/eao.owl#internal_active_structure_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</dc:source>
+        <rdfs:comment xml:lang="en">Represents an aggregate of two or more internal active structure elements, working together to perform some collective behavior.</rdfs:comment>
+        <rdfs:label xml:lang="en">collaboration</rdfs:label>
     </owl:Class>
     
 
@@ -411,7 +446,31 @@ The structure of components, their inter-relationships, and the principles and g
 
     <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#composite_element">
         <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#element"/>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</CommonCoreOntologies:http_query_string>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#aggregates"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#composite_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasSpecialization"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#grouping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasSpecialization"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#location"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#isComposedOf"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#composite_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</dc:source>
         <rdfs:comment xml:lang="en">an element consisting of other elements from multiple aspects or layers of the language</rdfs:comment>
         <rdfs:label xml:lang="en">composite element</rdfs:label>
     </owl:Class>
@@ -502,7 +561,13 @@ The structure of components, their inter-relationships, and the principles and g
                 <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#corner_shape"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</CommonCoreOntologies:http_query_string>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001025"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#location"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</dc:source>
         <rdfs:comment xml:lang="en">Basic unit, used to define and describe the constituent parts of Enterprise Architectures and their unique set of characteristics</rdfs:comment>
         <rdfs:label xml:lang="en">element</rdfs:label>
     </owl:Class>
@@ -549,7 +614,14 @@ The structure of components, their inter-relationships, and the principles and g
     <!-- http://eao.onl/ontologies/eao.owl#event -->
 
     <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#event">
-        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Act"/>
+                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Change"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#behavior_element"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -611,7 +683,8 @@ The structure of components, their inter-relationships, and the principles and g
                 <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_behavior_element"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</dc:source>
+        <rdfs:comment xml:lang="en">Represents a state change.</rdfs:comment>
         <rdfs:label xml:lang="en">event</rdfs:label>
     </owl:Class>
     
@@ -652,8 +725,10 @@ The structure of components, their inter-relationships, and the principles and g
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://eao.onl/ontologies/eao.owl#internal_active_structure_element"/>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</dc:source>
         <CommonCoreOntologies:alternative_label xml:lang="en">interface</CommonCoreOntologies:alternative_label>
         <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <rdfs:comment xml:lang="en">Represents a point of access where one or more services are exposed to the environment.</rdfs:comment>
         <rdfs:label xml:lang="en">external active structure element</rdfs:label>
     </owl:Class>
     
@@ -723,8 +798,9 @@ The structure of components, their inter-relationships, and the principles and g
                 <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#external_behavior_element"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</dc:source>
         <CommonCoreOntologies:alternative_label xml:lang="en">service</CommonCoreOntologies:alternative_label>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <rdfs:comment xml:lang="en">Represents an explicitly defined exposed behavior.</rdfs:comment>
         <rdfs:label xml:lang="en">external behavior element</rdfs:label>
     </owl:Class>
     
@@ -738,6 +814,35 @@ The structure of components, their inter-relationships, and the principles and g
     
 
 
+    <!-- http://eao.onl/ontologies/eao.owl#grouping -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#grouping">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001019"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://eao.onl/ontologies/eao.owl#location"/>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</dc:source>
+        <rdfs:comment xml:lang="en">aggregates or composes concepts that belong together based on some common characteristic.</rdfs:comment>
+        <rdfs:label xml:lang="en">grouping</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#interaction -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#interaction">
+        <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#internal_behavior_element"/>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</dc:source>
+        <rdfs:comment xml:lang="en">Represents a unit of collective behavior that must be performed by two or more internal active structure elements, either assigned directly or aggregated in a collaboration.</rdfs:comment>
+        <rdfs:label xml:lang="en">interaction</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://eao.onl/ontologies/eao.owl#internal_active_structure_element -->
 
     <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#internal_active_structure_element">
@@ -746,6 +851,12 @@ The structure of components, their inter-relationships, and the principles and g
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#aggregates"/>
                 <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_active_structure_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#hasSpecialization"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#collaboration"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -772,7 +883,8 @@ The structure of components, their inter-relationships, and the principles and g
                 <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_active_structure_element"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</dc:source>
+        <rdfs:comment xml:lang="en">Represents an entity that is capable of performing behavior.</rdfs:comment>
         <rdfs:label xml:lang="en">internal active structure element</rdfs:label>
     </owl:Class>
     
@@ -782,6 +894,12 @@ The structure of components, their inter-relationships, and the principles and g
 
     <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#internal_behavior_element">
         <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#behavior_element"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#accesses"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#passive_structure_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://eao.onl/ontologies/eao.owl#aggregates"/>
@@ -824,7 +942,14 @@ The structure of components, their inter-relationships, and the principles and g
                 <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#internal_behavior_element"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#external_behavior_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</dc:source>
+        <rdfs:comment xml:lang="en">An internal behavior element represents a unit of activity that can be performed by one or more active structure elements.</rdfs:comment>
         <rdfs:label xml:lang="en">internal behavior element</rdfs:label>
     </owl:Class>
     
@@ -840,7 +965,7 @@ The structure of components, their inter-relationships, and the principles and g
                 <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#layer_color"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</CommonCoreOntologies:http_query_string>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html</dc:source>
         <rdfs:comment xml:lang="en">An abstraction of the Archimate framework at which an enterprise can be modeled.
 
 [Source: Archimate 3.1]</rdfs:comment>
@@ -866,6 +991,23 @@ The structure of components, their inter-relationships, and the principles and g
     
 
 
+    <!-- http://eao.onl/ontologies/eao.owl#location -->
+
+    <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#location">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001015"/>
+                <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</dc:source>
+        <rdfs:comment xml:lang="en">Represents a conceptual or physical place or position where concepts are located (e.g., structure elements) or performed (e.g., behavior elements).</rdfs:comment>
+        <rdfs:label xml:lang="en">location</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://eao.onl/ontologies/eao.owl#medium_grey -->
 
     <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#medium_grey">
@@ -878,9 +1020,9 @@ The structure of components, their inter-relationships, and the principles and g
 
     <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#motivation_element">
         <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#element"/>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</dc:source>
+        <rdfs:comment xml:lang="en">A motivation element represents the context of or reason behind the architecture of an enterprise.</rdfs:comment>
         <rdfs:label xml:lang="en">motivation element</rdfs:label>
-        <rdfs:label xml:lang="en">motivation layer</rdfs:label>
     </owl:Class>
     
 
@@ -895,7 +1037,7 @@ The structure of components, their inter-relationships, and the principles and g
                 <owl:allValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#light_grey"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap03.html</CommonCoreOntologies:http_query_string>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap03.html</dc:source>
         <rdfs:comment xml:lang="en">represents the objects on which behavior is performed; these are usually information objects in the Business Layer and data objects in the Application Layer, but they may also be used to represent physical objects</rdfs:comment>
         <rdfs:label xml:lang="en">passive structure aspect</rdfs:label>
     </owl:Class>
@@ -924,7 +1066,8 @@ The structure of components, their inter-relationships, and the principles and g
                 <owl:someValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#passive_structure_element"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</dc:source>
+        <rdfs:comment xml:lang="en">Represents an element on which behavior is performed.</rdfs:comment>
         <rdfs:label xml:lang="en">passive structure element</rdfs:label>
     </owl:Class>
     
@@ -950,7 +1093,7 @@ The structure of components, their inter-relationships, and the principles and g
 
     <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#structure_element">
         <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#element"/>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</CommonCoreOntologies:http_query_string>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap04.html</dc:source>
         <rdfs:label xml:lang="en">structure element</rdfs:label>
     </owl:Class>
     
@@ -966,7 +1109,7 @@ The structure of components, their inter-relationships, and the principles and g
                 <owl:allValuesFrom rdf:resource="http://eao.onl/ontologies/eao.owl#green"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <CommonCoreOntologies:http_query_string xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap03.html</CommonCoreOntologies:http_query_string>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap03.html</dc:source>
         <rdfs:comment xml:lang="en">depicts technology services such as processing, storage, and communication services needed to run the applications, and the computer and communication hardware and system software that realize those services. Physical elements are included for modeling physical equipment, materials, and distribution networks to this layer</rdfs:comment>
         <rdfs:label xml:lang="en">technology layer</rdfs:label>
     </owl:Class>
@@ -986,12 +1129,6 @@ The structure of components, their inter-relationships, and the principles and g
     <owl:Class rdf:about="http://eao.onl/ontologies/eao.owl#yellow">
         <rdfs:subClassOf rdf:resource="http://eao.onl/ontologies/eao.owl#layer_color"/>
     </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
-
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
     
 
 
