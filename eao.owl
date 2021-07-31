@@ -2,6 +2,7 @@
 <rdf:RDF xmlns="http://eao.onl/ontologies/eao.owl#"
      xml:base="http://eao.onl/ontologies/eao.owl"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:eao="http://eao.onl/ontologies/eao.owl#"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -27,6 +28,23 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#archimate_relationship -->
+
+    <owl:AnnotationProperty rdf:about="http://eao.onl/ontologies/eao.owl#archimate_relationship"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -40,6 +58,12 @@
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#accesses">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://eao.onl/ontologies/eao.owl#isAccessedBy"/>
+        <archimate_relationship xml:lang="en">access</archimate_relationship>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap05.html</dc:source>
+        <rdfs:comment xml:lang="en">Represents the ability of behavior and active structure elements to observe or act upon passive structure elements.
+
+The access relationship indicates that a process, function, interaction, service, or event “does something” with a passive structure element; e.g., create a new object, read data from the object, write or modify the object data, or delete the object. The relationship can also be used to indicate that the object is just associated with the behavior; e.g., it models the information that comes with an event, or the information that is made available as part of a service. The arrow head, if present, indicates the creation, change, or usage of passive structure elements. The access relationship should not be confused with the UML dependency relationship, which uses a similar notation.</rdfs:comment>
+        <rdfs:label xml:lang="en">accesses</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -48,6 +72,28 @@
 
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#aggregates">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0001019"/>
+        <archimate_relationship xml:lang="en">aggregation</archimate_relationship>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap05.html</dc:source>
+        <rdfs:comment xml:lang="en">Represents that an element combines one or more other concepts. Aggregation does not imply an existence dependency between the aggregating and aggregated concepts. If an aggregation parent is deleted, its children still exist.</rdfs:comment>
+        <rdfs:label xml:lang="en">aggregates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#create -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#create">
+        <rdfs:subPropertyOf rdf:resource="http://eao.onl/ontologies/eao.owl#accesses"/>
+        <rdfs:label xml:lang="en">create</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#delete -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#delete">
+        <rdfs:subPropertyOf rdf:resource="http://eao.onl/ontologies/eao.owl#accesses"/>
+        <rdfs:label xml:lang="en">delete</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -57,6 +103,7 @@
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#flowsFrom">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://eao.onl/ontologies/eao.owl#flowsTo"/>
+        <rdfs:label xml:lang="en">flows from</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -65,6 +112,9 @@
 
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#flowsTo">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap05.html</dc:source>
+        <rdfs:comment xml:lang="en">Represents transfer from one element to another.</rdfs:comment>
+        <rdfs:label xml:lang="en">flows to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -108,7 +158,23 @@
     <!-- http://eao.onl/ontologies/eao.owl#hasSpecialization -->
 
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#hasSpecialization">
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap05.html</dc:source>
+        <rdfs:comment xml:lang="en">Represents that an element is a particular kind of another element.</rdfs:comment>
         <rdfs:label xml:lang="en">has specialization</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#influences -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#influences">
+        <owl:inverseOf rdf:resource="http://eao.onl/ontologies/eao.owl#isInfluencedBy"/>
+        <archimate_relationship xml:lang="en">influence</archimate_relationship>
+        <CommonCoreOntologies:example_of_usage xml:lang="en">“Assign Personal Assistant” positively influences “Reduce Workload Of Employees”, but has a negative influence on “Decrease Costs”.</CommonCoreOntologies:example_of_usage>
+        <rdfs:comment xml:lang="en">Represents that an element affects the implementation or achievement of some motivation element.
+
+The influence relationship is used to describe that some architectural element influences achievement or implementation of a motivation element, such as a goal or a principle. In general, a motivation element is realized to a certain degree. For example, consistently satisfying the principle “serve customers wherever they are” will help to make the goal “increase market share” come true. In other words, the principle contributes to the goal. In turn, to implement the principle “serve customers wherever they are”, it may be useful to impose a requirement of “24x7 web availability” on some customer-facing application component. This can be modeled as a requirement that has an influence on that principle, and as an application component that in turn influences the requirement. Consistently modeling these dependencies with an influence relationship yields a traceable motivational path that explains why, in this example, a certain application component contributes to the corporate goal to “increase market share”. This kind of traceability supports measuring the results of Enterprise Architecture, and provides valuable information to, for example, change impact assessments.</rdfs:comment>
+        <rdfs:label xml:lang="en">influences</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -126,6 +192,9 @@
 
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#isAssignedTo">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <archimate_relationship xml:lang="en">assignment</archimate_relationship>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap05.html</dc:source>
+        <rdfs:comment xml:lang="en">Represents the allocation of responsibility, performance of behavior, storage, or execution. Links active structure elements with units of behavior that are performed by them.</rdfs:comment>
         <rdfs:label xml:lang="en">is assigned to</rdfs:label>
     </owl:ObjectProperty>
     
@@ -135,16 +204,18 @@
 
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#isComposedOf">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0001019"/>
+        <archimate_relationship xml:lang="en">composition</archimate_relationship>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap05.html</dc:source>
+        <rdfs:comment xml:lang="en">Represents that an element consists of one or more other concepts.  Composition is a whole/part relationship that expresses an existence dependency: if a composite is deleted, its parts are (normally) deleted as well.</rdfs:comment>
+        <rdfs:label xml:lang="en">is composed of</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://eao.onl/ontologies/eao.owl#isRealizedBy -->
+    <!-- http://eao.onl/ontologies/eao.owl#isInfluencedBy -->
 
-    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#isRealizedBy">
-        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:label xml:lang="en">is realised by</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#isInfluencedBy">
+        <rdfs:label xml:lang="en">is influenced by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -169,10 +240,52 @@
     
 
 
+    <!-- http://eao.onl/ontologies/eao.owl#is_associated_with -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#is_associated_with">
+        <archimate_relationship xml:lang="en">association</archimate_relationship>
+        <rdfs:comment xml:lang="en">Represents an unspecified relationship, or one that is not represented by another ArchiMate relationship</rdfs:comment>
+        <rdfs:label xml:lang="en">is associated with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#negatively_influences -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#negatively_influences">
+        <rdfs:subPropertyOf rdf:resource="http://eao.onl/ontologies/eao.owl#influences"/>
+        <rdfs:label xml:lang="en">negatively influences</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#positively_influences -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#positively_influences">
+        <rdfs:subPropertyOf rdf:resource="http://eao.onl/ontologies/eao.owl#influences"/>
+        <rdfs:label xml:lang="en">positively influences</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eao.onl/ontologies/eao.owl#read -->
+
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#read">
+        <rdfs:subPropertyOf rdf:resource="http://eao.onl/ontologies/eao.owl#accesses"/>
+        <rdfs:label xml:lang="en">read</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://eao.onl/ontologies/eao.owl#serves -->
 
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#serves">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <archimate_relationship xml:lang="en">serving</archimate_relationship>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap05.html</dc:source>
+        <CommonCoreOntologies:example_of_usage xml:lang="en">a service serves a user</CommonCoreOntologies:example_of_usage>
+        <rdfs:comment xml:lang="en">Represents that an element provides its functionality to another element.</rdfs:comment>
+        <rdfs:label xml:lang="en">serves</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -181,13 +294,21 @@
 
     <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#triggers">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap05.html</dc:source>
+        <rdfs:comment xml:lang="en">Represents a temporal or causal relationship between elements.</rdfs:comment>
+        <rdfs:label xml:lang="en">triggers</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000054 -->
+    <!-- http://eao.onl/ontologies/eao.owl#update -->
 
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000054"/>
+    <owl:ObjectProperty rdf:about="http://eao.onl/ontologies/eao.owl#update">
+        <rdfs:subPropertyOf rdf:resource="http://eao.onl/ontologies/eao.owl#accesses"/>
+        <CommonCoreOntologies:alternative_label xml:lang="en">modify</CommonCoreOntologies:alternative_label>
+        <CommonCoreOntologies:alternative_label xml:lang="en">write</CommonCoreOntologies:alternative_label>
+        <rdfs:label xml:lang="en">update</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -195,6 +316,8 @@
 
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000055">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <archimate_relationship xml:lang="en">realization</archimate_relationship>
+        <dc:source xml:lang="en">https://pubs.opengroup.org/architecture/archimate3-doc/chap05.html</dc:source>
     </rdf:Description>
     
 
