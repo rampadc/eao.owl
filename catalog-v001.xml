@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-    <uri id="Imports Wizard Entry" name="http://www.ontologyrepository.com/CommonCoreOntologies/Upper/2021-03-01/ROImport" uri="http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ROImport"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/ro/releases/2021-06-23/ro.owl" uri="http://purl.obolibrary.org/obo/ro.owl"/>
     <uri id="Imports Wizard Entry" name="http://www.ontologyrepository.com/CommonCoreOntologies/Mid/2021-03-01/EventOntology" uri="http://www.ontologyrepository.com/CommonCoreOntologies/Mid/EventOntology"/>
-    <uri id="Imports Wizard Entry" name="http://www.ontologyrepository.com/CommonCoreOntologies/Mid/2021-03-01/ExtendedRelationOntology" uri="http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2019-08-26/bfo.owl" uri="http://purl.obolibrary.org/obo/bfo.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1627734329827" name="http://eao.onl/ontologies/eao.owl" uri="eao.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1627811067818" name="http://eao.onl/ontologies/eao-broken.owl" uri="broken/eao-broken.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1627811067818" name="http://purl.obolibrary.org/obo/bfo.owl" uri="bfo.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1627811067818" name="http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology" uri="broken/ExtendedRelationOntology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1627811067818" name="http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ROImport" uri="broken/ROImport.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1627811067818" name="http://www.semanticweb.org/congn/ontologies/2021/7/untitled-ontology-28" uri="eao.owl"/>
     </group>
 </catalog>
